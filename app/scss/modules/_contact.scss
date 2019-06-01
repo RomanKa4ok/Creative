@@ -1,0 +1,92 @@
+.contact {
+	position: relative;
+	&__map {
+		
+		width: 100%;
+		height: 900px;
+		&::before {
+			content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: $blue-over;
+				opacity: 1;
+				z-index: 2;
+				pointer-events: none;
+		}
+	}
+	&__container {
+		@include pos($t:0, $l: 0,$z:10);
+		width: 100%;
+		padding-top: 55px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+	}
+	&__form {
+		&-wrap {
+			margin-top: 280px;
+			max-width: 62%;
+			display: flex;
+			flex-direction: column;
+			margin-top: 250px;
+
+
+		}
+		&-row {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+	}
+	&__input {
+		background: rgba(255,255,255, .4);
+		width: 48.5%;
+		padding: 15px 25px;
+		color: #fff;
+		border-radius: 5px;
+		&::placeholder {
+				color: #fff;
+				font-style: italic;
+			}
+	}
+	&__textarea {
+		background: rgba(255,255,255, .4);
+		padding: 15px 25px;
+		color: #fff;
+		border-radius: 5px;
+		margin-bottom: 95px;
+			&::placeholder {
+				color: #fff;
+				font-style: italic;
+			}
+	}
+
+	&__button {
+		width: 300px;
+		height: 70px;
+		font-family: $title-bold;
+		color: #fff;
+		background: $violet;	
+		border-bottom: 4px solid darken($violet, 10%);
+		margin: 0 auto;
+		transition: .1s;
+
+		&:hover {
+			background: lighten($violet, 5%);
+			border-bottom: 4px solid darken($violet, 0%);
+
+		}
+		&:active {
+			border-color: transparent;
+			transform: scale(.98); 
+
+		}
+		
+	}
+}

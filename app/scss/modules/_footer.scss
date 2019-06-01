@@ -1,0 +1,16 @@
+.footer {
+	display: flex;
+	background: $violet;
+	justify-content: space-between;
+	padding: 70px 0px;
+	&__copy {
+		width: 30%;
+		color: #fff;
+		strong {
+			font-weight: 700;
+		}
+	}
+	&__social  {
+		width: 30%;
+	}
+}

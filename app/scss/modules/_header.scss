@@ -1,0 +1,90 @@
+.header {
+	min-height: 100vh;
+	background: url('../images/header-bg.jpg') no-repeat top center;
+	background-size: cover;
+	display: flex;
+	color: #fff;
+	@media (max-width: $width-lg) {
+		font-size: 2rem;
+	}
+
+	&::after {
+	content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $blue-over;
+    z-index: 0;
+	}
+
+
+	&__logo-icon {
+		@include size(60px);
+		fill: #fff;
+		transition: .1s;
+		&:hover {
+			fill: $violet;
+		}
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+		width: 51%;
+		@media (max-width: $width-lg) {
+			width: 20%;
+		} 
+		&-wrap {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 40px;
+			margin-bottom: 200px;
+		}
+	}
+	&__list {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		@media (max-width: 1000px) {
+			flex-direction: column;
+			text-align: right;
+		}
+
+	}
+	&__item {
+
+	}
+	&__link {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 600;
+		font-size: 1.33rem;
+		transition: .1s;
+		&:hover {
+			color: $violet;
+			text-decoration: none;
+		}
+			@media (max-width: $width-lg) {
+		font-size: 1.5rem;
+	}
+	}
+	&__title {
+		text-transform: uppercase;
+		font-size: 4rem;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 20px;
+		@media (max-width: $width-lg) {
+		font-size: 3rem;
+	}
+	}
+	&__desc {
+		margin: 0 auto;
+		text-align: center;
+		font-size: 1.66rem;
+		max-width: 60%;
+		font-style: italic;
+		
+	}
+}
