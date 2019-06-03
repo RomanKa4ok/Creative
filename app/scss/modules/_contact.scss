@@ -25,6 +25,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		pointer-events: none;
 
 	}
 	&__form {
@@ -35,6 +36,10 @@
 			flex-direction: column;
 			margin-top: 250px;
 
+			@media (max-width: $width-md) {
+				max-width: 95%;
+			}
+
 
 		}
 		&-row {
@@ -42,6 +47,9 @@
 			display: flex;
 			justify-content: space-between;
 			margin-bottom: 20px;
+			@media (max-width: $width-md) {
+				flex-direction: column;
+			}
 		}
 	}
 	&__input {
@@ -50,12 +58,25 @@
 		padding: 15px 25px;
 		color: #fff;
 		border-radius: 5px;
+		pointer-events: auto;
+			@media (max-width: $width-md) {
+				width: 100%;
+				
+			}
+		&:first-child {
+			@media (max-width: $width-md) {
+				margin-bottom: 20px;
+			}
+			
+		}
+
 		&::placeholder {
 				color: #fff;
 				font-style: italic;
 			}
 	}
 	&__textarea {
+		pointer-events: auto;
 		background: rgba(255,255,255, .4);
 		padding: 15px 25px;
 		color: #fff;
@@ -68,6 +89,7 @@
 	}
 
 	&__button {
+		pointer-events: auto;
 		width: 300px;
 		height: 70px;
 		font-family: $title-bold;
@@ -88,5 +110,60 @@
 
 		}
 		
+	}
+	&__note1,
+	&__note2 {
+		display: flex;
+		@include size(350px, 85px);
+		z-index: 5;
+		pointer-events: auto;
+		
+		transition: .3s;
+		@media (max-width: 720px) {
+			display: none;
+		}
+	}
+	&__note1 {
+		@include pos($r:-265px, $t:25%);
+		&--active {
+			.note__icon1 {
+				background: $violet;
+			}
+			@include pos($r:-10px, $t:25%);
+		
+		}
+	}
+	&__note2 {
+		@include pos($r:-265px, $t:35%);
+		&--active {
+			.note__icon2 {
+				background: $violet;
+			}
+		
+			@include pos($r:-10px, $t:35%);
+		}
+	}
+}
+.note {
+	@include size(255px,85px);
+	background: rgba(255,255,255, .5);
+	color: $grey;
+	font-size: 1rem;
+	line-height: 1.2rem;
+	text-align: center;
+	padding: 10px 20px;
+	
+	&__icon1,
+	&__icon2 {
+		@include size(85px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: $blue-over;
+		cursor: pointer;
+		transition: .2s;
+		&:hover {
+			background: $violet;
+		}
 	}
 }

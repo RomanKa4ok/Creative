@@ -1,6 +1,10 @@
 .services {
 	background: $ice-white;
-
+	@media (max-width: 995px) {
+	background: #fff;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
 	&__title {
 		text-transform: uppercase;
 		font-weight: 700;
@@ -39,6 +43,9 @@
 				left: 0;
 				background: $blue-over;
 				z-index: 0;
+			}
+			@media (max-width: $width-lg+35px) {
+				display: none;
 			}
 		}
 	}

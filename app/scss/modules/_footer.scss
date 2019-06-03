@@ -3,6 +3,9 @@
 	background: $violet;
 	justify-content: space-between;
 	padding: 70px 0px;
+	@media (max-width: $width-md) {
+		
+	}
 	&__copy {
 		width: 30%;
 		color: #fff;

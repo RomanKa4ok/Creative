@@ -2,7 +2,9 @@
 	padding: 125px 0;
 	background: $ice-white;
 	position: relative;
-
+    @media (max-width: 995px) {
+    	padding: 25px 0;
+    }
 	&__title {
 		 
 		&-wrap {
@@ -16,8 +18,8 @@
 	&__img {
 		&-wrap {
 			overflow: hidden;
-			@media (max-width: $width-md) {
-				width: 50%;
+			@media (max-width: $width-lg+35px) {
+				display: none;
 			}
 			&::after {
 				content: "";
@@ -59,6 +61,7 @@
 		@include pos($l: 50%, $b: 100px);
 		transform: translateX(-50%);
 		transition: .1s;
+
 		&:hover {
 			background: $violet;
 			color: #fff;
@@ -67,6 +70,9 @@
 		&:active {
 			transform: translateX(-50%)
 			 scale(.98);
+		}
+		@media (max-width: $width-lg+35px) {
+			bottom: 5%;
 		}
 	}	
 }
